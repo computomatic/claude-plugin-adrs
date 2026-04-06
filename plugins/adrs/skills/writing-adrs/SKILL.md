@@ -73,6 +73,12 @@ This prevents hallucinations, misinformation, and outdated information from infl
 - How to verify the implementation is complete and correct
 - Include test expectations where applicable
 
+### Architecture Documentation Updates
+- Describe what changes to `architecture/` docs are needed when this ADR is implemented
+- Reference specific files in `architecture/` that will need updating or creation (e.g., "Update `architecture/dependencies.md` to reflect the new library")
+- If no `architecture/` directory exists yet, note that it should be initialized with `/init-adrs`
+- If the decision has no impact on architecture documentation, state that explicitly rather than leaving the section blank
+
 ### Alternatives Considered
 - Each alternative that was seriously evaluated
 - Why it was rejected (specific technical or practical reasons)

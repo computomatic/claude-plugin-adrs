@@ -1,13 +1,13 @@
 ---
 name: init-adrs
-description: Scaffold the adrs/ directory structure in the current project. Use when setting up ADRs for the first time.
+description: Scaffold the adrs/ and architecture/ directory structure in the current project. Use when setting up ADRs for the first time.
 effort: min
 disable-model-invocation: true
 ---
 
 # Initialize ADRs
 
-Scaffolds the `adrs/` folder structure in a project that hasn't used ADRs before.
+Scaffolds the `adrs/` and `architecture/` directory structure in a project that hasn't used ADRs before.
 
 ## Workflow
 
@@ -19,6 +19,12 @@ Look for an `adrs/` directory at the repository root.
 - **If it exists and matches the expected structure** (`1-pending/`, `2-implemented/`, and `README.md` all present): report that the ADR directory is already initialized and stop.
 - **If it exists but does not match:** describe the current structure to the user and ask whether they want to migrate existing content to the expected format or leave it as-is. If they choose to migrate, rename/move directories to match the expected structure. If they choose to leave it, stop.
 
+Also check for an `architecture/` directory at the repository root.
+
+- **If it does not exist:** proceed to scaffold it in step 2.
+- **If it exists and contains a `README.md`:** report that the architecture directory is already initialized.
+- **If it exists but has no `README.md`:** proceed to scaffold the README in step 2.
+
 ### 2. Scaffold
 
 Create the following files:
@@ -26,10 +32,11 @@ Create the following files:
 - `adrs/README.md` (content from the README Content section below)
 - `adrs/1-pending/.gitkeep`
 - `adrs/2-implemented/.gitkeep`
+- `architecture/README.md` (content from the Architecture README Template section below)
 
 ### 3. Confirm
 
-Report the files that were created and suggest the user run `/draft-adr` to create their first ADR.
+Report the files that were created across both directories. Suggest the user run `/draft-adr` to create their first ADR. If the `architecture/` directory was created (or its README was added), also suggest the user run `/init-architecture` to populate it with comprehensive documentation of their project's existing architecture.
 
 ## README Content
 
@@ -60,4 +67,31 @@ Each ADR lives in its own subdirectory named `YYYY-MM-DD-short-name/`. The main 
 ## Creating a New ADR
 
 Run `/draft-adr [short-name] [description]` to start.
+~~~~~
+
+## Architecture README Template
+
+The following is a template for a standard software project. Adapt it to fit the project -- not all sections will apply (e.g., documentation projects, polyglot monorepos, infrastructure repos may need a different structure).
+
+~~~~~markdown
+# Architecture Documentation
+
+This directory contains living documentation of the current system state.
+
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [overview.md](overview.md) | {High-level system goal, major components, key patterns} |
+| [dependencies.md](dependencies.md) | {External libraries, vendoring strategy, maintenance procedures} |
+| [dev-environment.md](dev-environment.md) | {How to set up and run the project locally} |
+| [ci.md](ci.md) | {CI/CD workflows, triggers, deployment process} |
+
+## Maintenance
+
+Architecture docs are updated as part of ADR implementation, guided by each ADR's "Architecture Documentation Updates" section.
+
+## Relationship to ADRs
+
+ADRs capture point-in-time decisions and rationale; architecture docs describe the current state that results from those decisions.
 ~~~~~

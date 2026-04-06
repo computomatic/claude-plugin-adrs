@@ -18,6 +18,7 @@ You will be told what to write or edit. Read your instructions carefully and col
    - Read all provided materials thoroughly (plans, research findings, prior drafts, etc.)
    - Explore any codebase files referenced to gather citations
    - Search the web for any external references that need citing
+   - Check for an `architecture/` directory at the repository root. If present, read relevant architecture docs for context on the current system design and to inform the Architecture Documentation Updates section.
 
 2. **Set Up the ADR** (when creating a new one)
    - Create the ADR directory: `adrs/1-pending/YYYY-MM-DD-short-name/`
@@ -28,6 +29,7 @@ You will be told what to write or edit. Read your instructions carefully and col
    - Every factual claim must have a citation: web URL with quote, file path with line number, or attributed user statement
    - The Approach Details section must be detailed enough for another agent to implement from the ADR alone
    - When revising, preserve citation quality and report what changed
+   - The Architecture Documentation Updates section must reference specific files in `architecture/` when the directory exists (e.g., "Update `architecture/dependencies.md` to add the new library"). Do not leave it as a vague placeholder.
 
 4. **Report**
    - State the file path of the completed or updated ADR
@@ -40,3 +42,4 @@ You will be told what to write or edit. Read your instructions carefully and col
 - **Stay in your lane.** Write the ADR. Do not implement the decision.
 - **Follow the writing-adrs guidelines** for style, structure, and file placement.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
+- **Fill in Architecture Documentation Updates.** When `architecture/` exists, list the specific files that need updating and describe the changes. When it does not exist, note that the directory should be initialized.
