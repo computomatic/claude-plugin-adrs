@@ -1,0 +1,26 @@
+{
+  "name": "claude-adrs",
+  "owner": {
+    "name": "computomatic",
+    "url": "https://github.com/computomatic"
+  },
+  "metadata": {
+    "description": "Architecture Decision Record tooling for Claude Code",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "adrs",
+      "source": "./plugins/adrs",
+      "description": "Skills and agents for drafting Architecture Decision Records",
+      "version": "1.0.0",
+      "author": {
+        "name": "computomatic"
+      },
+      "license": "MIT",
+      "category": "documentation",
+      "tags": ["adr", "architecture", "documentation", "decisions"]
+    }
+  ]
+}
