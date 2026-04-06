@@ -1,7 +1,6 @@
 ---
 name: init-adrs
 description: Scaffold the adrs/ and architecture/ directory structure in the current project. Use when setting up ADRs for the first time.
-effort: min
 disable-model-invocation: true
 allowed-tools: Skill
 ---
