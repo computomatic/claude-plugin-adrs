@@ -34,14 +34,29 @@ Delegate to the **architecture-archaeologist** agent. In your delegation prompt:
 
 - Describe the goal: analyze the project's architecture for documentation purposes
 - Provide any user arguments (focus area, scope notes) from above
-- Note that the user is the domain expert and the agent should use `AskUserQuestion` for any ambiguity
+- Note that the user is the domain expert
+- The agent will surface any open questions both in its response message and in the report's Open Questions section
 - The agent will write its analysis report to a temp file under `/tmp/` and return the file path
 
-### 2. Propose Documentation Structure
+### 2. Resolve Open Questions
+
+After the archaeologist returns, check its response for open questions.
+
+If there are open questions:
+
+1. Present each question to the user, including the context the archaeologist provided (what was found, what is missing, why it matters)
+2. Collect the user's answers
+3. Append the answers to the end of the archaeologist's report file (after the Open Questions section)
+4. Delegate back to the **architecture-archaeologist** agent with the updated report path, instructing it to incorporate the new answers and surface any follow-up questions
+5. Repeat this loop until the archaeologist returns with no open questions
+
+If there are no open questions, proceed to the next step.
+
+### 3. Propose Documentation Structure
 
 Review the archaeologist's report. Assess whether the project has non-trivial architecture (existing code, multiple components, meaningful decisions to document).
 
-If the project is brand new or essentially empty, skip plan mode and proceed directly to Step 3 with a minimal documentation set.
+If the project is brand new or essentially empty, skip plan mode and proceed directly to Step 4 with a minimal documentation set.
 
 Otherwise, use the `EnterPlanMode` tool to enter plan mode. The plan should contain:
 
@@ -52,16 +67,16 @@ Otherwise, use the `EnterPlanMode` tool to enter plan mode. The plan should cont
 
 The user reviews and approves or modifies the plan before proceeding.
 
-### 3. Author
+### 4. Author
 
-Once the plan is approved (or determined in Step 2 for trivial projects), delegate to the **architecture-author** agent. In your delegation prompt:
+Once the plan is approved (or determined in Step 3 for trivial projects), delegate to the **architecture-author** agent. In your delegation prompt:
 
 - Provide the path to the approved plan file
 - Provide the path to the archaeologist's analysis report (the `/tmp/` file from Step 1) -- the author reads this directly, avoiding lossy transmission of details
 - Include any user preferences or focus areas
 - Instruct it to update `architecture/README.md` as an index of all created documents
 
-### 4. Review
+### 5. Review
 
 Read all drafted documents and assess:
 
