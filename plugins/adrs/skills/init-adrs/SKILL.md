@@ -33,7 +33,7 @@ Create the following files:
 - `adrs/README.md` (content from the README Content section below)
 - `adrs/1-pending/.gitkeep`
 - `adrs/2-implemented/.gitkeep`
-- `architecture/README.md` (content from the Architecture README Template section below)
+- `architecture/README.md` -- invoke the `/writing-architecture-readme` skill for the template and guidance, then adapt it to fit the project
 
 ### 3. Confirm
 
@@ -69,7 +69,3 @@ Each ADR lives in its own subdirectory named `YYYY-MM-DD-short-name/`. The main 
 
 Run `/draft-adr [short-name] [description]` to start.
 ~~~~~
-
-## Architecture README
-
-Invoke the `/writing-architecture-readme` skill for the template and guidance, then write `architecture/README.md` adapting the template to fit the project.
