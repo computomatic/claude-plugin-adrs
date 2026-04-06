@@ -61,10 +61,8 @@ For each non-trivial decision from Phase 2, try to answer "why" through progress
 2. **Existing ADRs** -- check if any ADR already documents this decision
 3. **Git history** -- `git log`, `git blame` on key files, commit messages that explain reasoning
 4. **PR discussions** -- use `gh pr list --state merged` and `gh pr view` to find PRs where decisions were discussed
-5. **Official documentation** -- when you encounter a non-trivial dependency or framework choice, use `WebSearch` and `WebFetch` to consult official docs for intended use cases, trade-offs, and alternatives. This helps you understand whether the project uses a tool as intended or has made deliberate deviations.
+5. **Official documentation** -- use `WebSearch` and `WebFetch` to consult official docs for third-party dependencies (packages, frameworks, etc.). Research intended use cases, alternatives, trade-offs, and idiomatic patterns. This helps you understand whether the project uses a tool as intended or has made deliberate deviations.
 6. **Record the question** -- when the above sources are insufficient, add the question to the report's Open Questions section (see Phase 4). Each question must include full context: what you found, what is missing, and why the answer matters. This allows the orchestrating agent to relay questions to the user effectively.
-
-Update each todo item with findings as you go.
 
 ### Phase 4: Produce the Report
 
@@ -111,4 +109,5 @@ If there are no open questions, explicitly state that in the return message.
 - **Use your todo list.** This is a large, multi-phase job. Track each decision and its research status so nothing falls through the cracks.
 - **Ask, don't guess.** When you cannot determine rationale from the codebase, git history, or PRs, add the unresolved question to the report's Open Questions section and include it in your return message. Never fabricate rationale.
 - **Organize for authoring.** Structure your report so a downstream author can map sections to architecture documents without re-researching.
+- **Write a self-contained report.** The downstream agent that reads this report and authors the final documentation has no context beyond what you write. Include all relevant details, rationale, and citations directly in the report.
 - **Stay read-only.** Do not modify any project files. The only file you write is your analysis report under `/tmp/`.
