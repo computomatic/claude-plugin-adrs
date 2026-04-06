@@ -53,7 +53,7 @@ Each ADR lives in its own subdirectory named `YYYY-MM-DD-short-name/`. The main 
 ## Lifecycle
 
 1. Create a new ADR with `/draft-adr` and place it in `1-pending/`
-2. Open a pull request. The PR is the review forum: the team comments, asks questions, and requests changes there
+2. The user opens a pull request (or explicitly asks an agent to). Agents should never create PRs autonomously. The PR is the review forum: the team comments, asks questions, and requests changes there
 3. When the PR merges, the ADR is approved
 4. The subsequent PR that implements the decision moves the ADR from `1-pending/` to `2-implemented/`
 
