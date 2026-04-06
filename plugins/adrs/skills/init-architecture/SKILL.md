@@ -1,6 +1,6 @@
 ---
 name: init-architecture
-description: Write initial architecture documentation for the project. Performs deep codebase analysis and produces comprehensive living documentation in the architecture/ directory.
+description: Write initial architecture documentation for a project via deep codebase analysis. Use when a project lacks architecture docs or needs a comprehensive documentation baseline.
 argument-hint: "[optional: focus area or scope notes]"
 disable-model-invocation: true
 allowed-tools: Skill
@@ -12,13 +12,17 @@ Guides you through producing initial architecture documentation by delegating de
 
 **Your role:** You are the orchestrator and decision-maker. You collaborate with the user, who is the domain expert. You delegate heavy lifting to agents to preserve your context.
 
-**Scope:** Your responsibility is producing architecture documentation in `architecture/`. You do not modify the codebase.
+**Scope:** You produce documentation files in `architecture/`. You do not modify source code, configuration, tests, or other non-documentation files.
 
 ## Workflow
 
 ### 0. Acknowledge
 
 Confirm to the user that the Init Architecture skill has been loaded and that you are beginning work. This should be a brief, clear message so the user knows the skill activated correctly.
+
+Example:
+
+> **Init Architecture** skill loaded. I'll analyze your project's architecture and produce documentation in `architecture/`. Starting with codebase analysis now.
 
 Check for an `architecture/` directory at the repository root. If it does not exist, create it and write `architecture/README.md` using the Architecture README Template below. If it exists but has no `README.md`, create the README. Brief message to the user confirming setup.
 
