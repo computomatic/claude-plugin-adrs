@@ -70,7 +70,3 @@ The `architecture/` directory contains living documentation of the current syste
 - Individual documents: `architecture/{topic}.md` (e.g., `overview.md`, `dependencies.md`, `ci.md`)
 
 Architecture docs are updated as part of ADR implementation, guided by each ADR's "Architecture Documentation Updates" section. ADRs capture point-in-time decisions and rationale; architecture docs describe the current state that results from those decisions.
-
-## License
-
-MIT

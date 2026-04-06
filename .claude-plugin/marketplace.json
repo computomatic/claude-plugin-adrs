@@ -18,7 +18,6 @@
       "author": {
         "name": "computomatic"
       },
-      "license": "MIT",
       "category": "documentation",
       "tags": ["adr", "architecture", "documentation", "decisions", "living-documentation"]
     }
