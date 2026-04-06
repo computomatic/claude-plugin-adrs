@@ -1,6 +1,6 @@
 ---
 name: writing-architecture-readme
-description: Guidelines and template for writing architecture README files. Defines the C4-inspired documentation hierarchy and README structure. Use when creating or updating an architecture/README.md file.
+description: Guidelines and template for writing architecture README files. Defines the documentation hierarchy and README structure. Use when creating or updating an architecture/README.md file.
 user-invocable: false
 ---
 
@@ -10,11 +10,11 @@ Reference for writing and updating `architecture/README.md` files. This skill de
 
 ## Documentation Hierarchy
 
-Architecture documentation follows a C4-inspired hierarchy of increasing detail:
+Architecture documentation follows a hierarchy of increasing detail:
 
-1. **System context** (`overview.md`) -- how the system fits into the broader landscape, external actors, and high-level responsibilities
-2. **Container level** (directories per deployable unit) -- each major deployable or independently running component gets its own subdirectory with a `README.md`
-3. **Component level** (files within container directories) -- individual component documentation covering internal design, patterns, and coupling decisions
+1. **System context** (`overview.md`) -- how the system fits into the broader landscape: external actors, neighboring systems, and high-level responsibilities
+2. **Container level** (directories per deployable unit) -- a *container* is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each gets its own subdirectory with a `README.md`
+3. **Component level** (files within container directories) -- a *component* is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Individual docs cover internal design, patterns, and coupling decisions
 4. **Code level** -- explicitly excluded from architecture docs. The code itself serves this purpose.
 
 Not every project needs all levels. A single-container application may only have system context and cross-cutting documents. Scale the hierarchy to match the project's complexity.
@@ -43,6 +43,15 @@ The following is a template for a standard software project. Adapt it to fit the
 
 This directory contains living documentation of the current system state.
 
+## Documentation Levels
+
+Architecture documentation follows a hierarchy of increasing detail:
+
+- **System context** (`overview.md`) -- how the system fits into the broader landscape: external actors, neighboring systems, and high-level responsibilities
+- **Containers** (subdirectories, e.g., `{container-name}/`) -- a container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database)
+- **Components** (files within container directories, e.g., `{container-name}/{component-name}.md`) -- a component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities
+- **Code level** -- explicitly excluded from architecture docs; the code itself serves this purpose
+
 ## Contents
 
 | Document | Description |
@@ -53,6 +62,7 @@ This directory contains living documentation of the current system state.
 | [tests.md](tests.md) | {Testing strategy, test architecture, coverage philosophy, test boundaries} |
 | [ci.md](ci.md) | {CI/CD architecture, pipeline design, deployment strategy} |
 | [{container-name}/]({container-name}/) | {Purpose, responsibilities, key interfaces} |
+| [{container-name}/{component-name}.md]({container-name}/{component-name}.md) | {Internal design, patterns, coupling decisions} |
 
 ## Maintenance
 
@@ -80,8 +90,8 @@ Testing strategy and philosophy: what levels of testing exist, where test bounda
 CI/CD architecture: pipeline structure, deployment strategy, environment promotion, and the reasoning behind workflow design. Covers both the "what" and "why" of the CI/CD setup.
 
 ### Container READMEs
-Each container's README covers its purpose, responsibilities, boundaries, and key interfaces. It serves as the entry point for understanding that deployable unit.
+A container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each container's README covers its purpose, responsibilities, boundaries, and key interfaces. It serves as the entry point for understanding that deployable unit.
 
 ### Component docs
-Individual component documentation within a container directory. Covers internal design rationale, patterns used, coupling decisions, and anything a developer needs to understand before modifying the component.
+A component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Individual component documentation within a container directory. Covers internal design rationale, patterns used, coupling decisions, and anything a developer needs to understand before modifying the component.
 ~~~~~
