@@ -25,6 +25,7 @@ New ADRs always start in `1-pending/`. The ADR is put up as a pull request for t
 - **Specific** -- name concrete files, functions, endpoints, data shapes
 - **No filler** -- every sentence must add information
 - **Scalable** -- ADRs can range from short and trivial to many pages long for complex, multi-faceted projects. Scale the depth to match the problem.
+- **Portable** -- never include user-specific environment details such as absolute paths containing home directories, machine-specific file locations, or worktree paths. Use repository-relative paths instead.
 
 ## Citations and References
 
