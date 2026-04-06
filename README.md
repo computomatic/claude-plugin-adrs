@@ -11,7 +11,7 @@ The `adrs` plugin provides:
 - **`/init-architecture` skill** -- deep codebase analysis and initial architecture documentation authoring
 - **`writing-adrs` skill** -- reference guide for ADR writing style, structure, and citation requirements
 - **`adr-author` agent** -- specialized subagent for writing and revising ADR documents with rigorous citation standards
-- **`architecture-archaeologist` agent** -- opus-powered agent for deep analysis of existing project architecture
+- **`architecture-archaeologist` agent** -- specialized agent for deep analysis of existing project architecture
 - **`architecture-author` agent** -- specialized agent for writing and updating architecture documentation
 - **ADR template** -- structured template covering executive summary, background, approach details, implementation roadmap, and alternatives
 
@@ -55,12 +55,8 @@ Performs deep codebase analysis to understand existing architecture, proposes a 
 
 ## ADR directory conventions
 
-By default, the plugin expects:
-
 - Pending: `adrs/1-pending/YYYY-MM-DD-short-name/ADR.md`
 - Implemented: `adrs/2-implemented/YYYY-MM-DD-short-name/ADR.md`
-
-These paths can be adjusted in your project's CLAUDE.md.
 
 ## Architecture directory conventions
 

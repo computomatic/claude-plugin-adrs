@@ -36,7 +36,7 @@ Create the following files:
 
 ### 3. Confirm
 
-Report the files that were created across both directories. Suggest the user run `/draft-adr` to create their first ADR. If the `architecture/` directory was created (or its README was added), also suggest the user run `/init-architecture` to populate it with comprehensive documentation of their project's existing architecture.
+Report the files that were created across both directories. Suggest the user run `/draft-adr` to create their first ADR. If the `architecture/` directory was created, also suggest the user run `/init-architecture` to populate it with comprehensive documentation of their project's existing architecture.
 
 ## README Content
 

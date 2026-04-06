@@ -9,7 +9,7 @@ disable-model-invocation: true
 
 Guides you through producing initial architecture documentation by delegating deep analysis to a specialized research agent and authoring to a dedicated writing agent.
 
-**Your role:** You are the orchestrator and decision-maker. You collaborate with the user, who is the domain expert. You delegate heavy lifting to agents to preserve your context for structural decisions.
+**Your role:** You are the orchestrator and decision-maker. You collaborate with the user, who is the domain expert. You delegate heavy lifting to agents to preserve your context.
 
 **Scope:** Your responsibility is producing architecture documentation in `architecture/`. You do not modify the codebase.
 
