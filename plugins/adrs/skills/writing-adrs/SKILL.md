@@ -17,7 +17,7 @@ Use the template at [templates/ADR.md](./templates/ADR.md). Copy it to the ADR d
 - Implemented ADRs: `adrs/2-implemented/YYYY-MM-DD-short-name/ADR.md`
 - Supporting documents: place alongside `ADR.md` in the same directory
 
-New ADRs always start in `1-pending/`. The ADR is put up as a pull request for team review. When the PR merges, the ADR is approved. The subsequent PR that implements the decision moves the ADR directory from `1-pending/` to `2-implemented/`.
+New ADRs always start in `1-pending/`. The ADR is a draft while the PR is open; merging the PR implicitly approves it. The ADR stays in `1-pending/` until the implementation PR moves its directory to `2-implemented/`.
 
 ## Writing Style
 

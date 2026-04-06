@@ -1,6 +1,7 @@
 ---
 name: init-adrs
 description: Scaffold the adrs/ directory structure in the current project. Use when setting up ADRs for the first time.
+model: none
 effort: min
 ---
 
@@ -22,7 +23,7 @@ Look for an `adrs/` directory at the repository root.
 
 Create the following files:
 
-- `adrs/README.md` -- use the exact content from the README section below
+- `adrs/README.md` - use the content from the README section below
 - `adrs/1-pending/.gitkeep`
 - `adrs/2-implemented/.gitkeep`
 
@@ -32,31 +33,31 @@ Report the files that were created and suggest the user run `/draft-adr` to crea
 
 ## README Content
 
-Write this content verbatim to `adrs/README.md`:
+The following is the default content for `adrs/README.md`. Write it as-is in most cases, but adapt it if the project has unique context that warrants changes:
 
-```markdown
+~~~~~markdown
 # Architecture Decision Records
 
-This directory contains Architecture Decision Records (ADRs) -- documents that capture significant technical decisions along with their context and consequences.
+This directory contains Architecture Decision Records (ADRs), documents that capture significant technical decisions along with their context and consequences.
 
 ## Folder Structure
 
 ```
 adrs/
-  1-pending/        ADRs awaiting approval
-  2-implemented/    ADRs that have been approved and implemented
+  1-pending/        Approved ADRs not yet implemented
+  2-implemented/    ADRs that have been implemented
 ```
 
 Each ADR lives in its own subdirectory named `YYYY-MM-DD-short-name/`. The main document is always `ADR.md`. Supporting materials (diagrams, data, references) go alongside it in the same directory.
 
 ## Lifecycle
 
-1. **Draft** -- Create a new ADR with `/draft-adr` and place it in `1-pending/`
-2. **Review** -- Open a pull request. The PR is the review forum: the team comments, asks questions, and requests changes there
-3. **Approved** -- When the PR merges, the ADR is approved
-4. **Implemented** -- The subsequent PR that implements the decision moves the ADR from `1-pending/` to `2-implemented/`
+1. Create a new ADR with `/draft-adr` and place it in `1-pending/`
+2. Open a pull request. The ADR is a draft while the PR is open; the team reviews, comments, and requests changes there
+3. Merging the PR implicitly approves the ADR. It stays in `1-pending/` until implemented
+4. The implementation PR moves the ADR from `1-pending/` to `2-implemented/`
 
 ## Creating a New ADR
 
 Run `/draft-adr [short-name] [description]` to start.
-```
+~~~~~
