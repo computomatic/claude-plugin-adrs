@@ -32,9 +32,19 @@ You will be told what to write or edit. Read your instructions carefully and col
 
 ## Ground Rules
 
-- **Cite everything.** No exceptions. File paths with line numbers for code references. Attribute user statements.
+- **Cite everything.** No exceptions. File paths with line numbers for code references. Attribute user statements. Line numbers MUST be accompanied by a commit SHA -- line numbers are meaningless without one because they are relative to a specific commit. Run `git rev-parse HEAD` to get the current SHA. Example reference format: `path/to/file.ts:42 (abc1234)`.
 - **Stay current.** Architecture docs describe the system as it IS, not as it was or will be.
 - **Cross-reference ADRs.** When a design choice exists because of a specific ADR, reference it (e.g., "See `adrs/2-implemented/2026-04-03-auth-system/ADR.md`").
 - **Be navigable.** Every document should link to related documents. `architecture/README.md` must serve as an index.
+- **Keep the index current.** Update `architecture/README.md` whenever architecture files are added, removed, or reorganized.
 - **Stay in your lane.** Write documentation. Do not modify the codebase or implement changes.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
+
+## Writing Style
+
+Architecture docs are consumed by coding agents as much as by humans. Optimize for that:
+
+- Prefer bulleted lists over prose paragraphs
+- Use concise, direct statements -- lead with the point
+- Favor machine-readable structure: consistent heading hierarchy, predictable patterns
+- One idea per bullet; use a list instead of compound sentences
