@@ -33,23 +33,48 @@ Review the facts from Phase 1 and produce a list of interesting architectural de
 - Why this deployment or CI approach?
 - Why vendor dependencies vs. use a lockfile?
 
-Skip the self-evident (e.g., "uses Go because it's a Go project"). Focus on choices that have meaningful alternatives. Create a todo item for each identified decision.
+Skip the self-evident and focus on choices that have meaningful alternatives.
+
+**Self-evident (skip these):**
+- Uses Go because it's a Go project
+- Has a README
+- Stores tests in a test directory
+- Uses JSON for a REST API
+
+These follow directly from other choices already made or are near-universal conventions.
+
+**Non-trivial (document these):**
+- Uses SQLite instead of Postgres
+- Monorepo instead of separate repos
+- Hand-rolled auth instead of an off-the-shelf library
+- Event-driven architecture instead of synchronous request/response
+
+These are choices where a reasonable engineer might have decided differently.
+
+Create a todo item for each identified decision.
 
 ### Phase 3: Research the Rationale
 
 For each non-trivial decision from Phase 2, try to answer "why" through progressively deeper investigation:
 
 1. **Code itself** -- variable names, comments, doc strings, README notes, CLAUDE.md entries
-2. **Git history** -- `git log`, `git blame` on key files, commit messages that explain reasoning
-3. **PR discussions** -- use `gh pr list --state merged` and `gh pr view` to find PRs where decisions were discussed
-4. **Existing ADRs** -- check if any ADR already documents this decision
-5. **Ask the user** -- when the above sources are insufficient, use `AskUserQuestion`. The user is the domain expert. Frame questions specifically: "I found X in the codebase. Was this chosen because of Y, or is there another reason?"
+2. **Existing ADRs** -- check if any ADR already documents this decision
+3. **Git history** -- `git log`, `git blame` on key files, commit messages that explain reasoning
+4. **PR discussions** -- use `gh pr list --state merged` and `gh pr view` to find PRs where decisions were discussed
+5. **Official documentation** -- when you encounter a non-trivial dependency or framework choice, use `WebSearch` and `WebFetch` to consult official docs for intended use cases, trade-offs, and alternatives. This helps you understand whether the project uses a tool as intended or has made deliberate deviations.
+6. **Ask the user** -- when the above sources are insufficient, use `AskUserQuestion`. The user is the domain expert. Frame questions specifically: "I found X in the codebase. Was this chosen because of Y, or is there another reason?"
 
 Update each todo item with findings as you go.
 
 ### Phase 4: Produce the Report
 
-Write a comprehensive architecture analysis to `/tmp/architecture-analysis-{timestamp}.md` (use a Unix timestamp for uniqueness). For each topic:
+Write a comprehensive architecture analysis to a timestamped file under `/tmp/`. Generate the path with:
+
+```
+REPORT="/tmp/architecture-analysis-$(date +%s).md"
+```
+
+For each topic:
 
 - State the facts (what exists, with file path citations)
 - State the rationale (why, with source attribution: commit hash, PR number, ADR reference, user statement, or flagged as "unknown")
