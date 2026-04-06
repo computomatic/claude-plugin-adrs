@@ -1,6 +1,6 @@
 ---
 name: writing-architecture-readme
-description: Guidelines and template for writing architecture README files. Defines the C4-inspired documentation hierarchy and README structure.
+description: Guidelines and template for writing architecture README files. Defines the C4-inspired documentation hierarchy and README structure. Use when creating or updating an architecture/README.md file.
 user-invocable: false
 ---
 
@@ -36,34 +36,22 @@ architecture/
 
 ## README Template
 
-The following is a template for a standard software project. Adapt it to fit the project -- not all sections will apply (e.g., documentation projects, polyglot monorepos, infrastructure repos may need a different structure).
+The following is a template for a standard software project. Adapt it to fit the project -- not all sections will apply and alternative sections might be appropriate (e.g., documentation projects, polyglot monorepos, infrastructure repos may need a different structure).
 
 ~~~~~markdown
 # Architecture Documentation
 
 This directory contains living documentation of the current system state.
 
-## System Context Documents
+## Contents
 
 | Document | Description |
 |----------|-------------|
 | [overview.md](overview.md) | {High-level system goal, how the system fits among other systems, external actors, major components, key patterns} |
-
-## Cross-Cutting Documents
-
-| Document | Description |
-|----------|-------------|
 | [dependencies.md](dependencies.md) | {External libraries, vendoring strategy, rationale for key dependency choices} |
 | [dev-environment.md](dev-environment.md) | {Why the dev environment is designed as it is: benefits, trade-offs, constraints} |
 | [tests.md](tests.md) | {Testing strategy, test architecture, coverage philosophy, test boundaries} |
 | [ci.md](ci.md) | {CI/CD architecture, pipeline design, deployment strategy} |
-
-## Containers
-
-Each major deployable unit has its own subdirectory containing a `README.md` overview and component-level documentation files.
-
-| Container | Description |
-|-----------|-------------|
 | [{container-name}/]({container-name}/) | {Purpose, responsibilities, key interfaces} |
 
 ## Maintenance
@@ -73,7 +61,6 @@ Architecture docs are updated as part of ADR implementation, guided by each ADR'
 ## Relationship to ADRs
 
 ADRs capture point-in-time decisions and rationale; architecture docs describe the current state that results from those decisions.
-~~~~~
 
 ## Section Guidance
 
@@ -97,3 +84,4 @@ Each container's README covers its purpose, responsibilities, boundaries, and ke
 
 ### Component docs
 Individual component documentation within a container directory. Covers internal design rationale, patterns used, coupling decisions, and anything a developer needs to understand before modifying the component.
+~~~~~
