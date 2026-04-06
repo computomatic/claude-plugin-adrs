@@ -83,6 +83,15 @@ Read the draft ADR and assess its quality before presenting to the user:
 - Once satisfied, present the draft to the user with a summary of each section
 - If the user requests further changes, send revision instructions back to the **adr-author** agent
 
+### 7. Next Steps
+
+Once the user is satisfied with the draft, remind them of the review workflow:
+
+- The ADR is in `adrs/1-pending/` -- open a pull request for team review
+- The PR is the review forum: teammates comment, ask questions, and request changes there
+- When the PR merges, the ADR is approved
+- The subsequent PR that implements the decision should move the ADR from `1-pending/` to `2-implemented/`
+
 ## Ground Rules
 
 - **You are the brain, not the scribe.** Never write the ADR yourself -- delegate to adr-author.

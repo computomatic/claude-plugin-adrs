@@ -36,6 +36,8 @@
 ## Architecture Documentation Updates
 
 <!-- Describe what changes to architecture/ docs are needed when this ADR is implemented -->
+<!-- If the project doesn't have an adrs/ directory yet, run /init-adrs first -->
+<!-- List the files and sections that need updating -->
 
 ## Alternatives Considered
 
