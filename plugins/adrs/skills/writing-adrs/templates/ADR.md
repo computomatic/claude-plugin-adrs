@@ -36,8 +36,8 @@
 ## Architecture Documentation Updates
 
 <!-- Describe what changes to architecture/ docs are needed when this ADR is implemented -->
-<!-- For the first ADR in a project, this includes seeding the directory -->
-<!-- For subsequent ADRs, list only the files and sections that need updating -->
+<!-- If the project doesn't have an adrs/ directory yet, run /init-adrs first -->
+<!-- List the files and sections that need updating -->
 
 ## Alternatives Considered
 
