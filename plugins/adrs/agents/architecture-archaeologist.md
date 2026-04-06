@@ -1,6 +1,6 @@
 ---
 name: architecture-archaeologist
-description: "Use this agent to perform deep analysis of an existing project's architecture. Produces a comprehensive analysis report for downstream documentation authoring.\n\n<example>\nuser: (orchestrator delegates) 'Analyze the architecture of this project for documentation purposes'\nassistant: 'I'll delegate to the architecture-archaeologist to perform deep codebase analysis'\n<commentary>The archaeologist explores everything, identifies non-trivial decisions, researches their rationale, and produces a structured report.</commentary>\n</example>"
+description: "Use this agent to perform deep analysis of an existing project's architecture. Produces a comprehensive analysis report for downstream documentation authoring.\n\n<example>\nContext: The orchestrating agent needs a deep codebase analysis before writing architecture documentation.\nuser: \"Analyze the architecture of this project for documentation purposes\"\nassistant: 'I'll delegate to the architecture-archaeologist to perform deep codebase analysis'\n<commentary>The archaeologist explores everything, identifies non-trivial decisions, researches their rationale, and produces a structured report.</commentary>\n</example>"
 model: opus
 color: orange
 tools: Read, Write, Glob, Grep, Bash, WebSearch, WebFetch, AskUserQuestion, TodoWrite
