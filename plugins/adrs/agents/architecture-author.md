@@ -5,6 +5,7 @@ model: sonnet
 color: cyan
 skills:
   - writing-adrs
+  - writing-architecture-readme
 tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
 ---
 

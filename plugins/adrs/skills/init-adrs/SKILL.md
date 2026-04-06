@@ -3,6 +3,7 @@ name: init-adrs
 description: Scaffold the adrs/ and architecture/ directory structure in the current project. Use when setting up ADRs for the first time.
 effort: min
 disable-model-invocation: true
+allowed-tools: Skill
 ---
 
 # Initialize ADRs
@@ -69,29 +70,6 @@ Each ADR lives in its own subdirectory named `YYYY-MM-DD-short-name/`. The main 
 Run `/draft-adr [short-name] [description]` to start.
 ~~~~~
 
-## Architecture README Template
+## Architecture README
 
-The following is a template for a standard software project. Adapt it to fit the project -- not all sections will apply (e.g., documentation projects, polyglot monorepos, infrastructure repos may need a different structure).
-
-~~~~~markdown
-# Architecture Documentation
-
-This directory contains living documentation of the current system state.
-
-## Documents
-
-| Document | Description |
-|----------|-------------|
-| [overview.md](overview.md) | {High-level system goal, major components, key patterns} |
-| [dependencies.md](dependencies.md) | {External libraries, vendoring strategy, maintenance procedures} |
-| [dev-environment.md](dev-environment.md) | {How to set up and run the project locally} |
-| [ci.md](ci.md) | {CI/CD workflows, triggers, deployment process} |
-
-## Maintenance
-
-Architecture docs are updated as part of ADR implementation, guided by each ADR's "Architecture Documentation Updates" section.
-
-## Relationship to ADRs
-
-ADRs capture point-in-time decisions and rationale; architecture docs describe the current state that results from those decisions.
-~~~~~
+Invoke the `/writing-architecture-readme` skill for the template and guidance, then write `architecture/README.md` adapting the template to fit the project.

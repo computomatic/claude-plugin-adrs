@@ -3,6 +3,7 @@ name: init-architecture
 description: Write initial architecture documentation for the project. Performs deep codebase analysis and produces comprehensive living documentation in the architecture/ directory.
 argument-hint: "[optional: focus area or scope notes]"
 disable-model-invocation: true
+allowed-tools: Skill
 ---
 
 # Initialize Architecture Documentation
@@ -74,29 +75,6 @@ If issues are found, send revision instructions back to the **architecture-autho
 - **Accuracy over coverage.** Better to document fewer things correctly than many things superficially. The user can always run the skill again to expand coverage.
 - **Stay in your lane.** Document the architecture. Do not implement changes to the codebase.
 
-## Architecture README Template
+## Architecture README
 
-The following is a template for a standard software project. Adapt it to fit the project -- not all sections will apply (e.g., documentation projects, polyglot monorepos, infrastructure repos may need a different structure).
-
-~~~~~markdown
-# Architecture Documentation
-
-This directory contains living documentation of the current system state.
-
-## Documents
-
-| Document | Description |
-|----------|-------------|
-| [overview.md](overview.md) | {High-level system goal, major components, key patterns} |
-| [dependencies.md](dependencies.md) | {External libraries, vendoring strategy, maintenance procedures} |
-| [dev-environment.md](dev-environment.md) | {How to set up and run the project locally} |
-| [ci.md](ci.md) | {CI/CD workflows, triggers, deployment process} |
-
-## Maintenance
-
-Architecture docs are updated as part of ADR implementation, guided by each ADR's "Architecture Documentation Updates" section.
-
-## Relationship to ADRs
-
-ADRs capture point-in-time decisions and rationale; architecture docs describe the current state that results from those decisions.
-~~~~~
+Invoke the `/writing-architecture-readme` skill for the template and guidance, then write `architecture/README.md` adapting the template to fit the project.

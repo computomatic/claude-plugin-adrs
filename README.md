@@ -10,6 +10,7 @@ The `adrs` plugin provides:
 - **`/draft-adr` skill** -- orchestrates the full ADR drafting workflow: problem exploration, solution design, research delegation, and authoring
 - **`/init-architecture` skill** -- deep codebase analysis and initial architecture documentation authoring
 - **`writing-adrs` skill** -- reference guide for ADR writing style, structure, and citation requirements
+- **`writing-architecture-readme` skill** -- guidelines and template for writing architecture README files, defining the C4-inspired documentation hierarchy
 - **`adr-author` agent** -- specialized subagent for writing and revising ADR documents with rigorous citation standards
 - **`architecture-archaeologist` agent** -- specialized agent for deep analysis of existing project architecture
 - **`architecture-author` agent** -- specialized agent for writing and updating architecture documentation
