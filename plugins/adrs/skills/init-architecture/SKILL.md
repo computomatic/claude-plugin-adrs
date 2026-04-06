@@ -44,7 +44,7 @@ After the archaeologist returns, check its response for open questions.
 
 If there are open questions:
 
-1. Present each question to the user, including the context the archaeologist provided (what was found, what is missing, why it matters)
+1. Present each question to the user using the `AskUserQuestion` tool (if available), including the context the archaeologist provided (what was found, what is missing, why it matters)
 2. Collect the user's answers
 3. Append the answers to the end of the archaeologist's report file (after the Open Questions section)
 4. Delegate back to the **architecture-archaeologist** agent with the updated report path, instructing it to incorporate the new answers and surface any follow-up questions
@@ -91,7 +91,7 @@ If issues are found, send revision instructions back to the **architecture-autho
 
 - **You are the brain, not the scribe.** Never write architecture docs yourself -- delegate to architecture-author.
 - **Preserve your context.** The point of delegation is to keep your context window focused on structural decisions and user collaboration.
-- **Accuracy over coverage.** Better to document fewer things correctly than many things superficially. The user can always run the skill again to expand coverage.
+- **Accuracy over coverage.** Better to document fewer things correctly than many things superficially. However, you should always strive for both correctness and completeness.
 - **Stay in your lane.** Document the architecture. Do not implement changes to the codebase.
 
 ## Architecture README
