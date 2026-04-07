@@ -13,8 +13,8 @@ Reference for writing and updating `architecture/README.md` files. This skill de
 Architecture documentation follows a hierarchy of increasing detail:
 
 1. **System context** (`overview.md`) -- how the system fits into the broader landscape: external actors, neighboring systems, and high-level responsibilities
-2. **Container level** (`{container-name}.md`) -- a *container* is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each gets its own document, with an optional subdirectory for supporting files
-3. **Component level** (`{container-name}/{component-name}/{component-name}.md`) -- a *component* is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Each gets its own subdirectory so complex components can have supporting documents alongside
+2. **Container level** (`{container-name}/{container-name}.md`) -- a *container* is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each gets its own subdirectory with a self-named document, so supporting docs and component documentation can live alongside
+3. **Component level** (`{container-name}/{component-name}/{component-name}.md`) -- a *component* is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Each gets its own subdirectory so supporting documents can live alongside
 4. **Code level** -- explicitly excluded from architecture docs. The code itself serves this purpose.
 
 Not every project needs all levels. A single-container application may only have system context and cross-cutting documents. Scale the hierarchy to match the project's complexity.
@@ -29,11 +29,12 @@ architecture/
   dev-environment.md                 # Cross-cutting: dev environment rationale
   tests.md                           # Cross-cutting: testing strategy
   ci.md                              # Cross-cutting: CI/CD architecture
-  {container-name}.md                 # Container level
-  {container-name}/                   # Optional: supporting docs for container
+  {container-name}/                    # Container level
+    {container-name}.md               # Container overview
+    {topic}.md                        # Supporting docs for container
     {component-name}/                 # Component level
       {component-name}.md             # Component overview
-      ...                             # Supporting docs for component
+      {topic}.md                      # Supporting docs for component
 ```
 
 ## README Template
@@ -50,8 +51,8 @@ This directory contains living documentation of the current system state.
 Architecture documentation follows a hierarchy of increasing detail:
 
 - **System context** (`overview.md`) -- how the system fits into the broader landscape: external actors, neighboring systems, and high-level responsibilities
-- **Containers** (`{container-name}.md`, with optional `{container-name}/` subdirectory for supporting docs) -- a container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database)
-- **Components** (`{container-name}/{component-name}/{component-name}.md`) -- a component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities
+- **Containers** (`{container-name}/{container-name}.md`) -- a container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each gets its own subdirectory for supporting docs and component documentation
+- **Components** (`{container-name}/{component-name}/{component-name}.md`) -- a component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Each gets its own subdirectory for supporting docs
 - **Code level** -- explicitly excluded from architecture docs; the code itself serves this purpose
 
 ## Contents
@@ -63,7 +64,7 @@ Architecture documentation follows a hierarchy of increasing detail:
 | [dev-environment.md](dev-environment.md) | {Why the dev environment is designed as it is: benefits, trade-offs, constraints} |
 | [tests.md](tests.md) | {Testing strategy, test architecture, coverage philosophy, test boundaries} |
 | [ci.md](ci.md) | {CI/CD architecture, pipeline design, deployment strategy} |
-| [{container-name}.md]({container-name}.md) | {Purpose, responsibilities, key interfaces} |
+| [{container-name}/{container-name}.md]({container-name}/{container-name}.md) | {Purpose, responsibilities, key interfaces} |
 | [{container-name}/{component-name}/{component-name}.md]({container-name}/{component-name}/{component-name}.md) | {Internal design, patterns, coupling decisions} |
 
 ## Maintenance
@@ -92,8 +93,8 @@ Testing strategy and philosophy: what levels of testing exist, where test bounda
 CI/CD architecture: pipeline structure, deployment strategy, environment promotion, and the reasoning behind workflow design. Covers both the "what" and "why" of the CI/CD setup.
 
 ### Container docs
-A container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each container gets a top-level document (`{container-name}.md`) covering its purpose, responsibilities, boundaries, and key interfaces. Complex containers can use an optional subdirectory (`{container-name}/`) for supporting documents and component documentation.
+A container is a separately deployable or independently running unit (e.g., an API server, a web frontend, a background worker, a database). Each container gets its own subdirectory with a self-named document (`{container-name}/{container-name}.md`) covering its purpose, responsibilities, boundaries, and key interfaces. Supporting documents (`{container-name}/{topic}.md`) and component subdirectories live alongside.
 
 ### Component docs
-A component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Each component gets its own subdirectory (`{component-name}/{component-name}.md`) within the container directory, so complex components can have supporting documents alongside. Covers internal design rationale, patterns used, coupling decisions, and anything a developer needs to understand before modifying the component.
+A component is a major structural unit within a container (e.g., a module, package, or service layer) that encapsulates a coherent set of responsibilities. Each component gets its own subdirectory (`{container-name}/{component-name}/{component-name}.md`) with supporting documents (`{container-name}/{component-name}/{topic}.md`) alongside. Covers internal design rationale, patterns used, coupling decisions, and anything a developer needs to understand before modifying the component.
 ~~~~~
