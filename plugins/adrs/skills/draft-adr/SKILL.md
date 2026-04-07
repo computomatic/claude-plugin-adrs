@@ -29,6 +29,7 @@ Then build your understanding:
 
 - Explore the codebase for relevant patterns, existing implementations, and conventions
 - Review existing ADRs in the project's ADR directory for context on past decisions
+- Check for an `architecture/` directory at the repository root; if present, review relevant architecture docs for context on the current system design and constraints
 - Ask the user clarifying questions **one at a time** until you understand the problem space, constraints, and goals
 - Form your own view of the problem and potential approaches
 
@@ -54,6 +55,7 @@ Delegate to the **microplanner** agent to research and plan the ADR content in d
 - Instruct it to invoke the `/writing-adrs` skill to understand the ADR structure and writing guidelines
 - Tell it to research thoroughly: codebase exploration, web searches, documentation review
 - Tell it the microplan should cover all sections of the ADR template with enough detail to write from
+- Tell it to include architecture documentation impact: which specific files in `architecture/` need to be created or updated when this ADR is implemented
 
 The microplanner will produce a microplan file with an implementation plan and outstanding questions.
 
@@ -79,6 +81,7 @@ Once the microplan is finalized, delegate to the **adr-author** agent:
 Read the draft ADR and assess its quality before presenting to the user:
 
 - Check for uncited claims, weak arguments, or missing details
+- Verify the Architecture Documentation Updates section references specific `architecture/` files when the directory exists, rather than being vague or left as a placeholder
 - If issues are found, send revision instructions back to the **adr-author** agent and repeat until the draft meets quality standards
 - Once satisfied, present the draft to the user with a summary of each section
 - If the user requests further changes, send revision instructions back to the **adr-author** agent

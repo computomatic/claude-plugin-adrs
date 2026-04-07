@@ -13,14 +13,13 @@
     {
       "name": "adrs",
       "source": "./plugins/adrs",
-      "description": "Skills and agents for drafting Architecture Decision Records",
+      "description": "Skills and agents for Architecture Decision Records and living architecture documentation",
       "version": "1.0.0",
       "author": {
         "name": "computomatic"
       },
-      "license": "MIT",
       "category": "documentation",
-      "tags": ["adr", "architecture", "documentation", "decisions"]
+      "tags": ["adr", "architecture", "documentation", "decisions", "living-documentation"]
     }
   ]
 }
