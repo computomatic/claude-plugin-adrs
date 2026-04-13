@@ -82,6 +82,7 @@ Read the draft ADR and assess its quality before presenting to the user:
 
 - Check for uncited claims, weak arguments, or missing details
 - Verify the Architecture Documentation Updates section references specific `architecture/` files when the directory exists, rather than being vague or left as a placeholder
+- Verify the Architecture Documentation Updates section reflects the current proposed approach, not a prior iteration. If the ADR changed during review, this section must be updated to match.
 - If issues are found, send revision instructions back to the **adr-author** agent and repeat until the draft meets quality standards
 - Once satisfied, present the draft to the user with a summary of each section
 - If the user requests further changes, send revision instructions back to the **adr-author** agent

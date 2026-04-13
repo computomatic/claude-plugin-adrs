@@ -43,4 +43,4 @@ You will be told what to write or edit. Read your instructions carefully and col
 - **Stay in your lane.** Write the ADR. Do not implement the decision. You are encouraged to add supplementary materials -- diagrams, research notes, supporting documents -- to the ADR's subdirectory as the documentation grows. The line is: documentation work is in-lane; implementing the actual decision is out-of-lane.
 - **Follow the writing-adrs guidelines** for style, structure, and file placement.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
-- **Fill in Architecture Documentation Updates.** When `architecture/` exists, list the specific files that need updating and describe the changes. When it does not exist, note that the directory should be initialized.
+- **Fill in Architecture Documentation Updates.** When `architecture/` exists, list the specific files that need updating and describe the changes. When it does not exist, note that the directory should be initialized. When revising an ADR, always update this section to match the current approach. It must never describe documentation changes for a superseded version of the proposal.

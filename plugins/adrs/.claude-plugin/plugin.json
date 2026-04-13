@@ -1,6 +1,6 @@
 {
   "name": "adrs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Skills and agents for drafting Architecture Decision Records (ADRs) with rigorous citation requirements and structured workflows.",
   "author": {
     "name": "computomatic",
