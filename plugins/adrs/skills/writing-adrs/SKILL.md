@@ -77,6 +77,7 @@ This prevents hallucinations, misinformation, and outdated information from infl
 - Describe what changes to `architecture/` docs are needed when this ADR is implemented
 - Reference specific files in `architecture/` that will need updating or creation (e.g., "Update `architecture/dependencies.md` to reflect the new library")
 - If no `architecture/` directory exists yet, note that it should be initialized with `/init-adrs`
+- As the ADR iterates through review, revise this section to reflect only the current proposed approach. When the ADR is approved, this section should describe exactly the documentation changes needed for the final decision, with no residue from prior iterations.
 - If the decision has no impact on architecture documentation, state that explicitly rather than leaving the section blank
 
 ### Alternatives Considered

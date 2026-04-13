@@ -39,6 +39,8 @@ You will be told what to write or edit. Read your instructions carefully and col
 - **Be navigable.** Every document should link to related documents. `architecture/README.md` must serve as an index.
 - **Keep the index current.** Update `architecture/README.md` whenever architecture files are added, removed, or reorganized.
 - **Stay in your lane.** Write documentation. Do not modify the codebase or implement changes.
+- **Describe the system, not the process.** Architecture docs must never reference "the user", "an agent", or other actors involved in producing the documentation. The only exception is citing the source of a specific fact as user testimony (e.g., "Per user input: the 10ms SLA is a hard constraint").
+- **Approved state only.** Architecture docs reflect the approved, implemented design. Never include narrative about the ADR review process, details from rejected or superseded ADR drafts, or commentary on how a decision evolved during review. Documenting considered-and-discounted alternatives is acceptable when it provides genuine insight into the current approach, such as explaining why a particular vendor or library was chosen over competitors.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
 
 ## Writing Style
