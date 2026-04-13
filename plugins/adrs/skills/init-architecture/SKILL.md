@@ -84,6 +84,7 @@ Read all drafted documents and assess:
 - Codebase accuracy: do cited file paths and patterns actually exist?
 - Cross-references: do documents reference related ADRs and each other?
 - README as index: does `architecture/README.md` list and link to all documents?
+- Rationale over restatement: does every section explain *why*, not restate what is obvious from reading the code? Reject any content that restates config file values, describes file contents that are self-evident, or includes setup/usage instructions.
 
 If issues are found, send revision instructions back to the **architecture-author** agent. Once satisfied, present the complete documentation set to the user with a summary of each document. If the user requests further changes, send revision instructions back to the **architecture-author** agent.
 
