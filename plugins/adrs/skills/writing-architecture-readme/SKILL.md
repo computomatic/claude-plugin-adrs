@@ -8,6 +8,10 @@ user-invocable: false
 
 Reference for writing and updating `architecture/README.md` files. This skill defines the documentation hierarchy and provides a standard template.
 
+## Content Principle
+
+Architecture documentation exists to capture what the code cannot tell you: reasoning, trade-offs, constraints, and the context behind non-trivial decisions. Before writing any statement, ask: "Would someone reading the relevant source file already know this?" If yes, leave it out. Never restate config file contents, describe what files contain when that is obvious from reading them, or include running instructions (those belong in the project README). Every sentence in an architecture doc should explain *why*, not *what*. This often produces short documents. That is correct. A document with three paragraphs of genuine rationale is more valuable than one with ten paragraphs of code restatement.
+
 ## Documentation Hierarchy
 
 Architecture documentation follows a hierarchy of increasing detail:

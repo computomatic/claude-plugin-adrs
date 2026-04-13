@@ -78,6 +78,8 @@ For each topic:
 - State the rationale (why, with source attribution: commit hash, PR number, ADR reference, user statement, or flagged as "unknown")
 - Note any unresolved questions
 
+**Filter ruthlessly.** The downstream author will use this report to write architecture docs whose sole purpose is capturing rationale. Exclude any observations that someone would learn by reading the source file or config directly: tables of config settings, lists of files and their contents, dependency inventories without rationale, or descriptions of code structure that are self-evident. If a fact has no accompanying "why," it does not belong in the report unless the missing rationale is itself flagged as an open question. A focused report with fewer topics is the correct outcome when the codebase has fewer non-trivial decisions. Do not pad with obvious observations to fill space.
+
 Organize findings so they map naturally to potential architecture documents.
 
 #### Open Questions

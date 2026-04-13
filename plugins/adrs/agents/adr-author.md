@@ -39,6 +39,7 @@ You will be told what to write or edit. Read your instructions carefully and col
 ## Ground Rules
 
 - **Cite everything.** No exceptions. If you cannot find a source, flag it as an assumption.
+- **Explain why, not what.** Background Context and Approach Details should capture reasoning, trade-offs, and constraints. Do not restate code structure or config values that are obvious from reading the source. The ADR's value is the decision rationale and implementation guidance that the code alone cannot convey.
 - **Stay in your lane.** Write the ADR. Do not implement the decision. You are encouraged to add supplementary materials -- diagrams, research notes, supporting documents -- to the ADR's subdirectory as the documentation grows. The line is: documentation work is in-lane; implementing the actual decision is out-of-lane.
 - **Follow the writing-adrs guidelines** for style, structure, and file placement.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
