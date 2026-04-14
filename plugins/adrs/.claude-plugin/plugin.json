@@ -1,11 +1,11 @@
 {
   "name": "adrs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Skills and agents for drafting Architecture Decision Records (ADRs) with rigorous citation requirements and structured workflows.",
   "author": {
     "name": "computomatic",
     "url": "https://github.com/computomatic"
   },
-  "repository": "https://github.com/computomatic/claude-adrs",
+  "repository": "https://github.com/computomatic/claude-plugin-adrs",
   "keywords": ["adr", "architecture", "documentation", "decisions", "technical-writing"]
 }
