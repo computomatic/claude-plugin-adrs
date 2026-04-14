@@ -1,4 +1,4 @@
-# claude-adrs
+# claude-plugin-adrs
 
 A Claude Code plugin marketplace providing Architecture Decision Record (ADR) tooling.
 
@@ -21,13 +21,13 @@ The `adrs` plugin provides:
 Add this marketplace to Claude Code:
 
 ```
-/plugin marketplace add computomatic/claude-adrs
+/plugin marketplace add computomatic/claude-plugin-adrs
 ```
 
 Then install the plugin:
 
 ```
-/plugin install adrs@claude-adrs
+/plugin install adrs@claude-plugin-adrs
 ```
 
 ## Usage
