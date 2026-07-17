@@ -26,10 +26,10 @@ You will be told what to write or edit. Read your instructions carefully and col
 
 3. **Write**
    - Work through the template section by section
-   - Every factual claim must have a citation: web URL with quote, file path with line number, or attributed user statement
+   - Every factual claim must have a citation: web URL with quote, file path with line range at a specific commit SHA (e.g., `path/to/file.ts:42 (abc1234)`), or attributed user statement. Every cited SHA MUST resolve on `main`.
    - The Approach Details section must be detailed enough for another agent to implement from the ADR alone
    - When revising, preserve citation quality and report what changed
-   - The Architecture Documentation Updates section must reference specific files in `architecture/` when the directory exists (e.g., "Update `architecture/dependencies.md` to add the new library"). Do not leave it as a vague placeholder.
+   - The Architecture Documentation Updates section must ship a supporting document (for example `N-architecture-doc-updates.md`) carrying the drafted prose exactly as it will land under `architecture/`. Name each destination file and identify the insertion point. Embed exact tables, snippets, and paragraphs; do not describe the changes abstractly.
 
 4. **Report**
    - State the file path of the completed or updated ADR
@@ -38,9 +38,9 @@ You will be told what to write or edit. Read your instructions carefully and col
 
 ## Ground Rules
 
-- **Cite everything.** No exceptions. If you cannot find a source, flag it as an assumption.
+- **Cite everything.** No exceptions. If a fact can be verified but has not been, verify it now, not at implementation time. If a fact cannot be located, ask the user; do not fabricate. If a load-bearing claim cannot be cited at all, delete the design that depended on it. Shipping an "assumption" flag is not an escape hatch.
 - **Explain why, not what.** Background Context and Approach Details should capture reasoning, trade-offs, and constraints. Do not restate code structure or config values that are obvious from reading the source. The ADR's value is the decision rationale and implementation guidance that the code alone cannot convey.
 - **Stay in your lane.** Write the ADR. Do not implement the decision. You are encouraged to add supplementary materials -- diagrams, research notes, supporting documents -- to the ADR's subdirectory as the documentation grows. The line is: documentation work is in-lane; implementing the actual decision is out-of-lane.
 - **Follow the writing-adrs guidelines** for style, structure, and file placement.
 - **Be concise.** Every sentence must add information. No filler, no preamble.
-- **Fill in Architecture Documentation Updates.** When `architecture/` exists, list the specific files that need updating and describe the changes. When it does not exist, note that the directory should be initialized. When revising an ADR, always update this section to match the current approach. It must never describe documentation changes for a superseded version of the proposal.
+- **Fill in Architecture Documentation Updates.** When `architecture/` exists, ship the drafted prose as a supporting document, name each destination file in `architecture/`, identify the insertion point, and embed exact tables, snippets, and paragraphs. The drafted prose must satisfy the architecture-author agent's ground rules. When `architecture/` does not exist, note that the directory should be initialized. When revising an ADR, always update this section to match the current approach. It must never describe documentation changes for a superseded version of the proposal.

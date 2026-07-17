@@ -22,12 +22,14 @@
 
 ## Implementation Roadmap
 
-<!-- Present the roadmap as a table. All steps start as PENDING. -->
+<!-- Present each step as a bulleted entry with key: value lines. Do not use a markdown table. -->
 
-| Step | Task | Description | Status | Dependencies |
-|------|------|-------------|--------|--------------|
-| 1 | [Short name] | [One-line description] | PENDING | None |
-| 2 | [Short name] | [One-line description] | PENDING | Step 1: [reason] |
+- **Step 1: [Short name]**
+  - Description: [One-line description]
+  - Dependencies: None
+- **Step 2: [Short name]**
+  - Description: [One-line description]
+  - Dependencies: Step 1: [reason]
 
 ## Definition of Done
 
@@ -35,7 +37,7 @@
 
 ## Architecture Documentation Updates
 
-<!-- Describe what changes to architecture/ docs are needed when this ADR is implemented -->
+<!-- Ship a supporting document (for example `N-architecture-doc-updates.md`) with the drafted prose exactly as it will land under architecture/. Name each destination file, identify the insertion point, and embed exact tables, snippets, and paragraphs. Do not gesture at them. If the decision has no impact on architecture documentation, state that explicitly. -->
 
 ## Alternatives Considered
 
