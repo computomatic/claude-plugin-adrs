@@ -44,10 +44,6 @@ Status: PENDING
 
 Dependencies: Step 1: [reason]
 
-## Definition of Done
-
-<!-- Numbered list of acceptance criteria (with nested items when appropriate) -->
-
 ## Architecture Documentation Updates
 
 <!-- Ship a supporting document (for example `N-architecture-doc-updates.md`) with the drafted prose exactly as it will land under architecture/. Name each destination file, identify the insertion point, and embed exact tables, snippets, and paragraphs. Do not gesture at them. If the decision has no impact on architecture documentation, state that explicitly. -->
