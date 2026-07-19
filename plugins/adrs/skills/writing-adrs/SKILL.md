@@ -71,11 +71,6 @@ This prevents hallucinations, misinformation, and outdated information from infl
 - Not a timeline -- just the sequence
 - Include what each step produces or changes
 
-### Definition of Done
-- Concrete acceptance criteria
-- How to verify the implementation is complete and correct
-- Include test expectations where applicable
-
 ### Architecture Documentation Updates
 - Ship the drafted architecture prose as a supporting document (for example `N-architecture-doc-updates.md`) carrying the exact text that will land under `architecture/`. Do not describe the changes abstractly.
 - Name each destination file in `architecture/` and identify the insertion point. Embed exact tables, snippets, and paragraphs; do not gesture at them.
