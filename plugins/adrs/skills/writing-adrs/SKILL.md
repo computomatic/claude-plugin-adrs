@@ -66,7 +66,7 @@ This prevents hallucinations, misinformation, and outdated information from infl
 
 ### Implementation Roadmap
 - Ordered sequence of discrete steps
-- Render each step as a bulleted entry with `key: value` lines (step name, description, dependencies). Do not use a markdown table.
+- Render each step as its own `### Step N: [name]` subsection with a prose description, an `Acceptance criteria:` line, a `Status:` line, and a `Dependencies:` line. Do not use a markdown table.
 - Each step should be independently verifiable
 - Not a timeline -- just the sequence
 - Include what each step produces or changes

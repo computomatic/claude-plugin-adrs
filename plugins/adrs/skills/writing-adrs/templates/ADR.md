@@ -22,14 +22,27 @@
 
 ## Implementation Roadmap
 
-<!-- Present each step as a bulleted entry with key: value lines. Do not use a markdown table. -->
+<!-- Steps are ordered for incremental delivery. Each step is its own subsection and produces a concrete, independently verifiable output. Note where steps are independent and can proceed in parallel. -->
 
-- **Step 1: [Short name]**
-  - Description: [One-line description]
-  - Dependencies: None
-- **Step 2: [Short name]**
-  - Description: [One-line description]
-  - Dependencies: Step 1: [reason]
+### Step 1: [Short name]
+
+<!-- What this step does, what it produces or changes, and a pointer to the relevant Approach Details subsection. -->
+
+Acceptance criteria: <!-- Concrete, checkable outcomes: a named test passes, a specific command plans cleanly. -->
+
+Status: PENDING
+
+Dependencies: (none)
+
+### Step 2: [Short name]
+
+<!-- What this step does and produces. -->
+
+Acceptance criteria: <!-- Concrete, checkable outcomes. -->
+
+Status: PENDING
+
+Dependencies: Step 1: [reason]
 
 ## Definition of Done
 
