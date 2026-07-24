@@ -32,9 +32,11 @@ New ADRs always start in `1-pending/`. The ADR is put up as a pull request for t
 **All factual claims must include references.** This is non-negotiable.
 
 - Web sources: link URL + quote the relevant passage
-- Source code: file path + line number or relevant code snippet
+- Source code: file path with line range at a specific commit SHA. Line numbers MUST be accompanied by a commit SHA -- line numbers are meaningless without one because they are relative to a specific commit. Run `git rev-parse HEAD` to get the current SHA. Example reference format: `path/to/file.ts:42 (abc1234)`. Every cited SHA MUST resolve on `main`; audit citations for main-branch reachability before requesting review.
 - User statements: attribute clearly (e.g., "Per user input: ...")
-- If a fact cannot be cited, flag it as an assumption
+- If a fact can be verified but has not been, verify it now, not at implementation time
+- If a fact cannot be located, ask the user; do not fabricate
+- If a load-bearing claim cannot be cited at all, delete the design that depended on it. Shipping an "assumption" flag is not an escape hatch.
 
 This prevents hallucinations, misinformation, and outdated information from influencing decisions.
 
@@ -64,18 +66,15 @@ This prevents hallucinations, misinformation, and outdated information from infl
 
 ### Implementation Roadmap
 - Ordered sequence of discrete steps
+- Render each step as its own `### Step N: [name]` subsection with a prose description, an `Acceptance criteria:` line, a `Status:` line, and a `Dependencies:` line. Do not use a markdown table.
 - Each step should be independently verifiable
 - Not a timeline -- just the sequence
 - Include what each step produces or changes
 
-### Definition of Done
-- Concrete acceptance criteria
-- How to verify the implementation is complete and correct
-- Include test expectations where applicable
-
 ### Architecture Documentation Updates
-- Describe what changes to `architecture/` docs are needed when this ADR is implemented
-- Reference specific files in `architecture/` that will need updating or creation (e.g., "Update `architecture/dependencies.md` to reflect the new library")
+- Ship the drafted architecture prose as a supporting document (for example `N-architecture-doc-updates.md`) carrying the exact text that will land under `architecture/`. Do not describe the changes abstractly.
+- Name each destination file in `architecture/` and identify the insertion point. Embed exact tables, snippets, and paragraphs; do not gesture at them.
+- The drafted prose must satisfy the architecture-author agent's ground rules (including "reads as what exists after the ADR ships, never as what changed"). Do not restate those rules here.
 - If no `architecture/` directory exists yet, note that it should be initialized with `/init-adrs`
 - As the ADR iterates through review, revise this section to reflect only the current proposed approach. When the ADR is approved, this section should describe exactly the documentation changes needed for the final decision, with no residue from prior iterations.
 - If the decision has no impact on architecture documentation, state that explicitly rather than leaving the section blank

@@ -22,20 +22,31 @@
 
 ## Implementation Roadmap
 
-<!-- Present the roadmap as a table. All steps start as PENDING. -->
+<!-- Steps are ordered for incremental delivery. Each step is its own subsection and produces a concrete, independently verifiable output. Note where steps are independent and can proceed in parallel. -->
 
-| Step | Task | Description | Status | Dependencies |
-|------|------|-------------|--------|--------------|
-| 1 | [Short name] | [One-line description] | PENDING | None |
-| 2 | [Short name] | [One-line description] | PENDING | Step 1: [reason] |
+### Step 1: [Short name]
 
-## Definition of Done
+<!-- What this step does, what it produces or changes, and a pointer to the relevant Approach Details subsection. -->
 
-<!-- Numbered list of acceptance criteria (with nested items when appropriate) -->
+Acceptance criteria: <!-- Concrete, checkable outcomes: a named test passes, a specific command plans cleanly. -->
+
+Status: PENDING
+
+Dependencies: (none)
+
+### Step 2: [Short name]
+
+<!-- What this step does and produces. -->
+
+Acceptance criteria: <!-- Concrete, checkable outcomes. -->
+
+Status: PENDING
+
+Dependencies: Step 1: [reason]
 
 ## Architecture Documentation Updates
 
-<!-- Describe what changes to architecture/ docs are needed when this ADR is implemented -->
+<!-- Ship a supporting document (for example `N-architecture-doc-updates.md`) with the drafted prose exactly as it will land under architecture/. Name each destination file, identify the insertion point, and embed exact tables, snippets, and paragraphs. Do not gesture at them. If the decision has no impact on architecture documentation, state that explicitly. -->
 
 ## Alternatives Considered
 
